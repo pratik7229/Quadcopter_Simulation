@@ -55,8 +55,21 @@ git clone https://github.com/pratik7229/Quadcopter_Simulation.git
 cd ..
 catkin_make
 ```
-# Follow the Youtube Video 
 
+# start the simulation
+``` bash
+roslaunch drone_description gazebo.launch
+```
+
+- check the topics published
+```bash
+rostopic list
+```
+
+- fly the drone
+``` bash
+rostopic pub -1 /drone/joint_motor_controller/command std_msgs/Float64MultiArray "data: [10, -10, 10, -10]"
+```
 
 
 
