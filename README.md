@@ -13,15 +13,11 @@ The "Quadcopter Simulation in Gazebo and ROS" repository offers a comprehensive 
   sudo apt update
   sudo apt upgrade
 ```
-- Installing python3 and pip3.
-```bash
-    sudo apt-get install python-dev python-pip python3-dev python3-pip python3-rospkg
 
-```
 - Installation of packages
 ``` bash
-sudo apt-get install ros-neotic-gazebo-ros-pkgs ros-neotic-gazebo-ros-control ros-neotic-ros-control ros-neotic-ros-controllers
-sudo apt-get install ros-neotic-joint-state-controller ros-neotic-effort-controllers ros-neotic-position-controllers
+sudo apt-get install ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control ros-noetic-ros-control ros-noetic-ros-controllers
+sudo apt-get install ros-noetic-joint-state-controller ros-noetic-effort-controllers ros-noetic-position-controllers
 ```
 # configuring the workspace
 
@@ -29,7 +25,7 @@ open a Terminal
 
 - Initiate a workspace in your home directory
 ```bash
-source /opt/ros/neotic/setup.bash 
+source /opt/ros/noetic/setup.bash 
 ```
 - make a workspace with the name of your choice
 ``` bash
@@ -51,6 +47,7 @@ source ~/drone_ws/devel/setup.bash
 
 - Clone the repository in the source directory of the workspace
 ```bash
+cd src
 git clone https://github.com/pratik7229/Quadcopter_Simulation.git
 ```
 - move back to the origin of workspace and perform catkin make
