@@ -1,0 +1,243 @@
+<?xml version="1.0" ?>
+<robot name="drone" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find drone_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find drone_description)/urdf/drone.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-1.3611796838095473e-09 2.2572788549915626e-09 0.009525511568441525" rpy="0 0 0"/>
+    <mass value="0.1874865054280611"/>
+    <inertia ixx="0.001558" iyy="0.000589" izz="0.002139" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="prop_front_right">
+  <inertial>
+    <origin xyz="-9.99431040704657e-09 3.364808431882693e-13 0.0024999999998293852" rpy="0 0 0"/>
+    <mass value="0.00044742627679520287"/>
+        <inertia ixx="0.001558" iyy="0.000589" izz="0.002139" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1155 0.1155 -0.024" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/front_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1155 0.1155 -0.024" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/front_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="prop_front_left">
+  <inertial>
+    <origin xyz="5.689893001203927e-16 2.636779683484747e-16 0.002500000000000068" rpy="0 0 0"/>
+    <mass value="0.00044742627687353686"/>
+        <inertia ixx="0.001558" iyy="0.000589" izz="0.002139" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1155 -0.1155 -0.024" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/front_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1155 -0.1155 -0.024" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/front_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="prop_back_left">
+  <inertial>
+    <origin xyz="6.938893903907228e-17 -6.938893903907228e-17 0.002500000000000016" rpy="0 0 0"/>
+    <mass value="0.0004474262768735355"/>
+        <inertia ixx="0.001558" iyy="0.000589" izz="0.002139" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.1155 -0.1155 -0.024" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/back_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.1155 -0.1155 -0.024" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/back_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="prop_back_right">
+  <inertial>
+    <origin xyz="-3.806064898109751e-07 -6.938893903907228e-16 0.0025000000000001688" rpy="0 0 0"/>
+    <mass value="0.00044743028376449776"/>
+       <inertia ixx="0.001558" iyy="0.000589" izz="0.002139" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.1155 0.1155 -0.024" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/back_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.1155 0.1155 -0.024" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/back_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="0.0 -2.8271597168564596e-18 0.009999999999999998" rpy="0 0 0"/>
+    <mass value="0.025509732347149122"/>
+    <inertia ixx="3e-06" iyy="3e-06" izz="5e-06" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.019" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.019" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin xyz="0.003537404956487491 -5.423653569417846e-14 1.734723475976807e-18" rpy="0 0 0"/>
+    <mass value="0.0004802723919810493"/>
+        <inertia ixx="0.001558" iyy="0.000589" izz="0.002139" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.025 -0.0 -0.0095" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.025 -0.0 -0.0095" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="joint_front_right_prop" type="continuous">
+  <origin xyz="0.1155 -0.1155 0.024" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="prop_front_right"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="joint_front_left_prop" type="continuous">
+  <origin xyz="0.1155 0.1155 0.024" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="prop_front_left"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="joint_back_left_prop" type="continuous">
+  <origin xyz="-0.1155 0.1155 0.024" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="prop_back_left"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="joint_back_right_prop" type="continuous">
+  <origin xyz="-0.1155 -0.1155 0.024" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="prop_back_right"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rigid 5" type="fixed">
+  <origin xyz="0.0 0.0 0.019" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="Rigid 6" type="fixed">
+  <origin xyz="0.025 0.0 0.0095" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera_1"/>
+</joint>
+
+<!-- Add transmission elements -->
+	<transmission name="front_right_motor_joint" >
+		<type>transmission_interface/SimpleTransmission</type>	
+		<joint name="joint_front_right_prop">
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="BLDC_motor1">
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+			<mechanicalReduction>1</mechanicalReduction>
+		</actuator>
+	</transmission>
+	
+	<transmission name="front_left_motor_joint" >
+		<type>transmission_interface/SimpleTransmission</type>	
+		<joint name="joint_front_left_prop">
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="BLDC_motor2">
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+			<mechanicalReduction>1</mechanicalReduction>
+		</actuator>
+	</transmission>
+	
+	<transmission name="back_right_motor_joint" >
+		<type>transmission_interface/SimpleTransmission</type>	
+		<joint name="joint_back_right_prop">
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="BLDC_motor3">
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+			<mechanicalReduction>1</mechanicalReduction>
+		</actuator>
+	</transmission>
+	
+	<transmission name="back_left_motor_joint" >
+		<type>transmission_interface/SimpleTransmission</type>	
+		<joint name="joint_back_left_prop">
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="BLDC_motor4">
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+			<mechanicalReduction>1</mechanicalReduction>
+		</actuator>
+	</transmission>
+
+
+
+	
+	
+	
+</robot>
